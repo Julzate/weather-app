@@ -7,9 +7,6 @@ function App() {
   const [data, setData] = useState({})
   const [location, setLocation] = useState("")
   const [image, setImage] = useState("")
-  
-
-
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=imperial`  
   const icon = `http://openweathermap.org/img/wn/${image}@2x.png`
 
@@ -42,6 +39,7 @@ function App() {
 
   return (
     <div className="app">
+      {/* Search Bar */}
       <div className="search-container">
       <div className="search">
         <input
@@ -50,6 +48,7 @@ function App() {
           onKeyDown={searchLocation}
           placeholder="Enter Location"
           type="text"
+          autoFocus
         />
         <img src={search} alt="search" className="search-icon"></img>
       </div>
